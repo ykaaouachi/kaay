@@ -10,4 +10,8 @@ class PagesController extends Controller {
         $this->render('index');
     }
     
+    function index(){
+        $this->render('index');
+    }
+    
 }
