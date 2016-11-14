@@ -4,8 +4,17 @@ class Dispatcher {
     public $request;
 
     function __construct(){
-        echo "I'm dispatcher";
         $this->request = new Request();
-        echo "url : ".$this->request->url;
+        Router::parse($this->request->url, $this->request);
+
+        $controller = $this->loadController();
+        call_user_func_array(array($controller, $this->request->action), $this->request->params);
+
+    }
+
+    function loadController(){
+        $name = ucFirst($this->request->controller).'Controller';
+        require(ROOT.DS.'controller'.DS.$name.'.php');
+        return new $name($this->request);
     }
 }

@@ -7,6 +7,6 @@
     
     require(CORE.DS."includes.php");
     
-$d = new Dispatcher();
+    $d = new Dispatcher();
     
 ?>
