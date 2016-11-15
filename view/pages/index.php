@@ -1,5 +1,5 @@
 <div class="hero-unit">
-    <h1>Hello</h1>
+    <h1>View : index - controller : pages</h1>
     <p> Description on my page </p>
 </div>
 
